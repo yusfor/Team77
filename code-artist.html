@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- 
+    SITE 1101 Principles of Information Systems 
+    (c)202X by Name Surname 
+    Submitted in partial fulfillment of the requirements of the course.
+-->
+<html>
+    <head>
+        <title>Homework 3: Programming art</title>
+        <link rel="stylesheet" href="styles.css">  
+        <script type="text/javascript" src="scripts.js"></script>      
+    </head>
+    <body>
+        <div class="topnav">
+            <div class="topnav-logo">
+                <a href="index.html">
+                    <img src="media/TeamNinjaTurtles.jpg" alt="Logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="team-members.html">Team Members</a>
+                <a href="hour-of-code.html">Hour of Code</a>
+                <a href="web-project.html">Website Project</a>
+                <a class="active" href="code-artist.html">Code Art</a>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="sub-container1" style="text-align:center">
+                <h1>Code Artist: Star Pattern</h1>
+                <p>
+                    On this canvas, a nice star pattern is drawn by random colors. The logic behind the pattern is explained below:
+                </p>
+                <ul style="text-align: left; display: inline-block;">
+                    <li>
+                        <b>DrawStar(context, size):</b> This function draws a single 5-pointed star. The piece of software employs a loop to make 5 lines, and after each line making 144 degrees rotation it makes the star.
+                    </li>
+                    <li>
+                        <b>DrawStarPattern(context):</b> This function creates a pattern of stars. It:
+                        <ol>
+                            <li>Starts in the center of the canvas.</li>
+                            <li>Draws 10 stars of increasing size.</li>
+                            <li>At the end of each star, the pitch rotates by 30 degrees, leading to a spiral.</li>
+                            <li>Specifies random colors on each star in the RGB model.</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align:center">
+            <canvas id="art-canvas" width="640" height="480">
+                Sorry ... your browser doesn't support the HTML5 canvas element.
+            </canvas>        
+        </div>          
+        <script type="text/javascript">
+            // Get reference to the 2D context of the canvas
+            let canvas = document.getElementById("art-canvas");
+            let context = canvas.getContext("2d");
+            // Set the color for drawing lines using red, green and blue components
+            // context.strokeStyle = 'rgb(255, 0, 0)';
+            context.strokeStyle = `rgb(${255 * Math.random()}, ${255 * Math.random()}, ${255 * Math.random()})`;
+            DrawStarPattern(context);
+        </script>
+    </body>
+
+    <footer style="background-color: #333; padding: 20px; text-align:center">
+        <p><a style="color: #FFFDD0;">Contact us: </a><a href="mailto:teamada77@gmail.com" style="color: #FFD700;">teamada77@gmail.com</a></p>
+        <p><a style="color: #FFFDD0;">Follow us on: </a><a href="https://www.instagram.com/teamada77/" style="color: #FFD700;">Instagram</a>
+        </p>
+    </footer>
+</html>
