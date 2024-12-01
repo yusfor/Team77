@@ -47,21 +47,30 @@ function DrawSpiral(context) {
         turnRight(89);
     }
 }
+// Function to draw a 5-pointed star
 function DrawStar(context, size) {
+    // Loop 5 times to draw the 5 points of the star
     for (let i = 0; i < 5; i++) {
-        moveForward(size, context); 
-        turnRight(144);
+        moveForward(size, context); // Move forward by the specified size 
+        turnRight(144); // Turn 144 degrees to create the star shape
     }
 }
+// Function to draw a pattern of stars
 function DrawStarPattern(context) {
+    // Set the starting position to the center of the canvas
     x = context.canvas.width / 2;
     y = context.canvas.height / 2;
-    angle = 0.0;
-    context.beginPath();
+    angle = 0.0; // Initial orientation (facing east)
+    context.beginPath(); // Begin a new drawing path
+    // Loop to draw 10 stars in the pattern
     for (let i = 1; i <= 10; i++) {
+        // Set a random color for each star using RGB values
         context.strokeStyle = `rgb(${255 * Math.random()}, ${255 * Math.random()}, ${255 * Math.random()})`;
+        // Draw a star with increasing size (i * 20)
         DrawStar(context, i * 20);
+        // Rotate 30 degrees to create a spiral effect
         turnRight(30);
+        // Stroke (draw) the current path on the canvas
         context.stroke();
     }
 }
